@@ -8,26 +8,21 @@ Service.init(
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true, 
+            allowNull: false
         },
         name: {
-            type: DataTypes.Array,
-            options: {
-                [
-                    "Women's Haircut",
-                    "Men's Haircut",
-                    "Styling",
-                    "Highltights & Tints",
-                    "Beard Trimming"
-
-                ]
-            }
+            type: DataTypes.STRING,
+            allowNull: false,
+ 
         },
         price: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         duration: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
     },
     {
