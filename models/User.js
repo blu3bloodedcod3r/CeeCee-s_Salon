@@ -25,9 +25,7 @@ User.init(
             enum: ['Pending', 'Active'],
             default: 'Pending'
         },
-        confirmationCode: { 
-            type: DataTypes.ALPHANUMERIC, 
-            unique: true },
+        validateEmail(),
     },
     {
         sequelize,
@@ -37,6 +35,5 @@ User.init(
         modelName: 'user'
     }
 );
-
 
 module.exports = User
