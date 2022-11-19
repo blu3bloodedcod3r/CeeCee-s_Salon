@@ -2,12 +2,12 @@
     {
        "name": "Women's Styling",
        "price": "$50 - $100 (depending on hair length)",
-       "duration": "30 min. - 1hr" 
+       "duration": "45 min" 
     },
     {
         "name": "Men's Styling",
         "price": "$20 - $50",
-        "duration": "30 min. - 1 hr"  
+        "duration": "45 min"  
      },
      {
         "name": "Women's Haircut",

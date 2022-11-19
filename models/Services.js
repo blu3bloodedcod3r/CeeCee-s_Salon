@@ -9,7 +9,6 @@ Services.init(
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true, 
-            allowNull: false
         },
         name: {
             type: DataTypes.STRING,
@@ -21,7 +20,7 @@ Services.init(
             allowNull: false
         },
         duration: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         }
     },
