@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const validateEmail = require('../public/js/emailValidate');
 
 class User extends Model {};
 
@@ -25,7 +26,7 @@ User.init(
             enum: ['Pending', 'Active'],
             default: 'Pending'
         },
-        validateEmail(),
+        validateEmail: true
     },
     {
         sequelize,
