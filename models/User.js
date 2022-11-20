@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const validateEmail = require('../public/js/emailValidate');
 
 class User extends Model {};
 
@@ -25,9 +26,7 @@ User.init(
             enum: ['Pending', 'Active'],
             default: 'Pending'
         },
-        confirmationCode: { 
-            type: DataTypes.ALPHANUMERIC, 
-            unique: true },
+        validateEmail: true
     },
     {
         sequelize,
@@ -37,6 +36,5 @@ User.init(
         modelName: 'user'
     }
 );
-
 
 module.exports = User

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript email validation</title>
+<link rel='stylesheet' href='form-style.css' type='text/css' />   //link to the source file of css to add styles
+</head>
+<body onload='document.form1.text1.focus()'>
+<div class="mail">
+<h2>{{email}}</h2>
+<form name="form1" action="#">
+<ul>
+<li><input type='text' name='text1'/></li>
+<li>&nbsp;</li>
+<li class="Validate"><input type="submit" name="Validate" value="Validate" onclick="ValidateEmail(document.form1.text1)"/></li>  //Adding the submit button
+<li>&nbsp;</li>
+</ul>
+</form>
+</div>
+<script src="../../public/js/emailValidate.js"></script>    //link to the source file of javascript function
+</body>
+</html>
