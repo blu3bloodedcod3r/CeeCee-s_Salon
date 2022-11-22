@@ -17,6 +17,7 @@
     "seed": "node seeds/seed.js"
   },
   "devDependencies": {
+    "handlebars-helper-css": "^0.1.0",
     "nodemon": "^2.0.20"
   },
   "name": "tech_blog",

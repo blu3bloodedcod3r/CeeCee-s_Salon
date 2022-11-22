@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.get('/', async (req, res) => {
+router.get('/services', async (req, res) => {
     try{
         const selectService = await Services.getByPk({
             id: req.params.id,
