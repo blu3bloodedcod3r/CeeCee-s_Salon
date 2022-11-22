@@ -6,7 +6,7 @@ const Appt = require('./Appt')
 User.belongsToMany(Services, {
   through: {
     model: Appt,
-    unique: false,
+    unique: false
   }
 });
 
@@ -14,7 +14,7 @@ Services.belongsToMany(User, {
   through: {
     model: Appt,
     unique: false
-  },
+  }
 });
 
 

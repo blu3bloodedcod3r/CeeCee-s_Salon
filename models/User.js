@@ -26,7 +26,7 @@ User.init(
             enum: ['Pending', 'Active'],
             default: 'Pending'
         },
-        validateEmail: true
+        // validateEmail: true
     },
     {
         sequelize,
