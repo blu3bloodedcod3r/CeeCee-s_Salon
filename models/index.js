@@ -1,20 +1,21 @@
 const User = require('./User');
-const Service = require('./Service');
+const Services = require('./Services');
 const Appt = require('./Appt')
 
-User.belongsToMany(Service, {
-  through: {
-    model: Appt,
-    unique: false,
-  },
-});
 
-Service.belongsToMany(User, {
+User.belongsToMany(Services, {
   through: {
     model: Appt,
     unique: false
-  },
+  }
+});
+
+Services.belongsToMany(User, {
+  through: {
+    model: Appt,
+    unique: false
+  }
 });
 
 
-module.exports =  { User, Appt };
+module.exports =  { User, Services, Appt };

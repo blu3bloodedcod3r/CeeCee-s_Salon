@@ -11,25 +11,21 @@ User.init(
             autoIncrement: true
         },
         email: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
         },
-        // password: {
-        //     type: DataTypes.ALPHANUMERIC
-        // },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {len: [10]}
+        },
         status: {
-            type: String, 
+            type: DataTypes.STRING, 
             enum: ['Pending', 'Active'],
             default: 'Pending'
-          },
-          confirmationCode: { 
-            type: String, 
-            unique: true },
-          // roles: [
-          //   {
-          //     type: mongoose.Schema.Types.ObjectId,
-          //     ref: "Role"
-          //   }
-          // ]
+        },
+        // validateEmail: true
     },
     {
         sequelize,
@@ -39,6 +35,5 @@ User.init(
         modelName: 'user'
     }
 );
-
 
 module.exports = User

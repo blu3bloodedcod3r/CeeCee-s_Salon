@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS 'ceecees_salon'
+DROP DATABASE IF EXISTS ceecees_salon;
 
-CREATE DATABASE 'ceecees_salon'
+CREATE DATABASE ceecees_salon;
