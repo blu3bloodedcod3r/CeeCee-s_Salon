@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const validateEmail = require('../public/js/emailValidate');
 
 class User extends Model {};
 
@@ -14,7 +13,10 @@ User.init(
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
+            unique: true,
+            validate:{ 
+                isEmail: true
+        }
         },
         password: {
             type: DataTypes.STRING,
@@ -26,7 +28,6 @@ User.init(
             enum: ['Pending', 'Active'],
             default: 'Pending'
         },
-        // validateEmail: true
     },
     {
         sequelize,
