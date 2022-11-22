@@ -6,15 +6,14 @@ const session = require('express-session');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+const app = express();
 const PORT = process.env.PORT || 3000;
 
 const hbs = exphbs.create({ });
 
-const app = express();
+app.use(require('./controllers'))
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(require('./controllers'))
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
