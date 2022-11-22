@@ -1,0 +1,41 @@
+:root {
+    --bgcdark: #231F20;
+    --bgclight: #EAEAEA;
+    --fcdark: #8E793E;
+    --fclight: #AD974F;
+}
+
+
+header {
+    background-color: var(--bgcdark);
+    height: 20vh;
+    color: var(--fclight);
+}
+
+body {
+    background-color: var(--bgclight);
+    /* font-family: 'Bigelow Rules', cursive; */
+    font-family: 'Mystery Quest', cursive;
+}
+
+
+.navcontainer {
+    background-color: var(--bgcdark);
+    color: white;
+    position: absolute;
+    height: 100vh;
+}
+
+.links li {
+    margin: 3rem;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--fcdark);
+}
+
+.card-body{
+    background-color: var(--bgclight);
+}
