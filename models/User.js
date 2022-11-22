@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const validateEmail = require('../public/js/emailValidate');
 
 class User extends Model {};
 
