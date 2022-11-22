@@ -13,9 +13,9 @@ User.init(
         email: {
             type: DataTypes.STRING
         },
-        password: {
-            type: DataTypes.ALPHANUMERIC
-        },
+        // password: {
+        //     type: DataTypes.ALPHANUMERIC
+        // },
         status: {
             type: String, 
             enum: ['Pending', 'Active'],
@@ -24,12 +24,12 @@ User.init(
           confirmationCode: { 
             type: String, 
             unique: true },
-          roles: [
-            {
-              type: mongoose.Schema.Types.ObjectId,
-              ref: "Role"
-            }
-          ]
+          // roles: [
+          //   {
+          //     type: mongoose.Schema.Types.ObjectId,
+          //     ref: "Role"
+          //   }
+          // ]
     },
     {
         sequelize,

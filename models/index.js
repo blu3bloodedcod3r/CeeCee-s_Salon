@@ -17,4 +17,4 @@ Service.belongsToMany(User, {
 });
 
 
-module.exports =  { User, Service, Appt };
+module.exports =  { User, Appt };
