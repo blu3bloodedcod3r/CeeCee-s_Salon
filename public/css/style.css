@@ -5,11 +5,15 @@
     --fclight: #AD974F;
 }
 
+h1{
+    font-size: 4.5rem;
+}
 
 header {
     background-color: var(--bgcdark);
     height: 20vh;
     color: var(--fclight);
+    font-size: 2.5rem;
 }
 
 body {
@@ -21,9 +25,8 @@ body {
 
 .navcontainer {
     background-color: var(--bgcdark);
-    color: white;
-    position: absolute;
     height: 100vh;
+    position: absolute;
 }
 
 .links li {
@@ -33,9 +36,15 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--fcdark);
+    color: var(--fclight);
+    font-size: 1.5rem;
 }
 
-.card-body{
+.card {
     background-color: var(--bgclight);
+}
+
+.btn {
+    background-color: var(--bgcdark);
+    color: var(--fclight)
 }
