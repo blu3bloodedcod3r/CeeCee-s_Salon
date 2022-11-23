@@ -12,7 +12,7 @@ router.get('/services', async (req, res) => {
         res.render('/services', {Services})    
 
     if (selectService) {
-        //grab calendar annd book appt.
+        res.render('/bookAppt', {Appt})
     }
     
     res.status(200).json(selectService);
