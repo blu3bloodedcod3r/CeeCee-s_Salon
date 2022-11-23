@@ -1,9 +1,7 @@
 const datetimeSlotPicker = document.querySelector('datetime-slot-picker');
      
-/* LISTENER FOR DATE AND TIME SLOT CHANGES */
 datetimeSlotPicker.addEventListener('slotUpdate', function(event){ console.log('Updated Slot: ', event.detail) });
  
-/* INITIALIZING THE AVAILABLE SLOTS. TIME SLOTS IS OPTIONAL */
 datetimeSlotPicker.slots = [
   {
     "date": 'Thu, 26 Nov 2020',
