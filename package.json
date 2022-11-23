@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "appointment-picker": "^2.0.0",
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
     "datetime-slot-picker": "^0.1.8",
