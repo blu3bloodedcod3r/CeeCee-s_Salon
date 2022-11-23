@@ -48,3 +48,7 @@ a {
     background-color: var(--bgcdark);
     color: var(--fclight)
 }
+
+.content {
+  margin-left: 350px;
+}
