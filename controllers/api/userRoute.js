@@ -11,9 +11,11 @@ router.post('/login', async (req, res) => {
       where: {email: req.body.email}
     });
     console.log('userData', userData)
+
     // exit if no user found
     if (!userData) {
       return res.status(400).json({ message: 'Incorrect email or password, please try again'});
+  
     }
 
     // if user exists check password by comparing the pd in the user model and password passed from the body
@@ -24,10 +26,12 @@ router.post('/login', async (req, res) => {
     }
 
     // if above passes then I can create a session and send a response back.
+    console.log('I am before req.session')
+    console.log('req.session ***', req.session)
     req.session.save(() => {
         // declare session variables you can use in other templates so you can give access to the user to certain pages and information
-        req.session.userId = userData.id;
-        req.session.email = userData.email;
+        req.session.userId = userData.dataValues.id;
+        req.session.email = userData.dataValues.email;
         req.session.loggedIn = true;
 
         // send response to client
@@ -36,6 +40,7 @@ router.post('/login', async (req, res) => {
   } catch (err) {
     console.log(err)
     res.status(400).json(err);
+    alert('Incorrect email or password, please try again');
   }
 });
 
