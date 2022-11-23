@@ -9,6 +9,8 @@ router.get('/services', async (req, res) => {
             duration: req.params.duration
     });
 
+        res.render('/services', {Services})    
+
     if (selectService) {
         //grab calendar annd book appt.
     }
@@ -19,4 +21,6 @@ router.get('/services', async (req, res) => {
         console.log(err);
         res.status(500).json(err);
     }
-})
+});
+
+module.exports = router
