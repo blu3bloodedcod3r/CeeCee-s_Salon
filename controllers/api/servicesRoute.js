@@ -17,10 +17,10 @@ router.get('/', async (req, res) => {
         console.log(data)
         res.render('services', { service })
 
-    // } 
-    // if (selectService) {
-    //     //grab calendar annd book appt.
-    // }
+    if (selectService) {
+        res.render('/bookAppt', {Appt})
+    }
+
     
     // res.status(200).json(selectService);
 
