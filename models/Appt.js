@@ -29,7 +29,7 @@ Appt.init(
     service_id: {
       type: DataTypes.INTEGER,
       reference: {
-        model: 'service',
+        model: 'services',
         key: 'id'
       },
     },
