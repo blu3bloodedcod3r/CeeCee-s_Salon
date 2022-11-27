@@ -1,76 +1,42 @@
-const datetimeSlotPicker = document.querySelector('datetime-slot-picker');
-     
-datetimeSlotPicker.addEventListener('slotUpdate', function(event){ console.log('Updated Slot: ', event.detail) });
- 
-datetimeSlotPicker.slots = [
-  {
-    "date": 'Thu, 26 Nov 2020',
-    "timeSlots": [
-       '8 AM - 9 AM',
-      '9 AM - 10 AM',
-      '10 AM - 11 AM',
-      '11 AM - 12 PM',
-      '1 PM - 2 PM',
-      '2 PM - 3 PM',
-      '4 PM - 5 PM',
-      '5 PM - 6 PM',
-      '6 PM - 7 PM'    
-     ]
-  },
-  {
-    "date": 'Fri, 27 Nov 2020',
-    "timeSlots": [
-       '8 AM - 9 AM',
-      '9 AM - 10 AM',
-      '10 AM - 11 AM',
-      '11 AM - 12 PM',
-      '1 PM - 2 PM',
-      '2 PM - 3 PM',
-      '4 PM - 5 PM',
-      '5 PM - 6 PM',
-      '6 PM - 7 PM'
-    ]
-  },
-  {
-    "date": 'Mon, 30 Nov 2020',
-    "timeSlots": [
-       '8 AM - 9 AM',
-      '9 AM - 10 AM',
-      '10 AM - 11 AM',
-      '11 AM - 12 PM',
-      '1 PM - 2 PM',
-      '2 PM - 3 PM',
-      '4 PM - 5 PM',
-      '5 PM - 6 PM',
-      '6 PM - 7 PM'
-    ]
-  },
-  {
-    "date": 'Tue, 1 Dec 2020',
-    "timeSlots": [
-       '8 AM - 9 AM',
-      '9 AM - 10 AM',
-      '10 AM - 11 AM',
-      '11 AM - 12 PM',
-      '1 PM - 2 PM',
-      '2 PM - 3 PM',
-      '4 PM - 5 PM',
-      '5 PM - 6 PM',
-      '6 PM - 7 PM'
-    ]
-  },
-  {
-    date: 'Mon, 4 Jan 2021',
-    timeSlots: [
-      '8 AM - 9 AM',
-      '9 AM - 10 AM',
-      '10 AM - 11 AM',
-      '11 AM - 12 PM',
-      '1 PM - 2 PM',
-      '2 PM - 3 PM',
-      '4 PM - 5 PM',
-      '5 PM - 6 PM',
-      '6 PM - 7 PM'
-    ]
-  }
-];
+const router = require('express').Router();
+const AppointmentPicker = require('appointment-picker');
+
+router.get('/service/:id/appt', async (req, res) => {
+    try{
+        const selectService = await Services.getByPk({
+            id: req.params.id,
+            name: req.params.name,
+            price: req.params.price,
+            duration: req.params.duration
+    });
+        res.render('/services', {Services})    
+
+    if (selectService) {
+        res.render('/bookAppt', {Appt})
+    }
+    
+    res.status(200).json(selectService);
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+let picker = new AppointmentPicker(document.getElementById('time'), {
+    interval: 60,
+    mode: '12h',
+    minTime: 09,
+    maxTime: 19,
+    startTime: 09,
+    endTime: 19,
+    disabled: ['16:30', '17:00'],
+    allowReset: true,
+    title: Services.selectService,
+    templateInner: '<li class="appo-picker-list-item {{disabled}}"><input type="button" tabindex="-1" value="{{time}}" {{disabled}}></li>',
+    templateOuter: '<span class="appo-picker-title">{{title}}</span><ul class="appo-picker-list">{{innerHtml}}</ul>'
+}); 
+
+
+module.exports = router
+
