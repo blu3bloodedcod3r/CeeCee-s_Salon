@@ -15,6 +15,10 @@ User.init(
       primaryKey: true,
       autoIncrement: true
     },
+    // phone: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false
+    // },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
