@@ -1,10 +1,20 @@
 const router = require('express').Router();
-const { User, Appt, Services } = require('../models');
+const { User, Appt, Services} = require('../models');
 
 router.get('/', async (req, res) => {
-    res.render('homepage', {
-        loggedIn: req.session.loggedIn
-    });
+
+    try {
+        const servicesData = await Services.findAll()
+        const services = servicesData.map((data) => data.get({plain: true}))
+        console.log(services)
+        res.render('homepage', { services })
+
+    } catch (err) {
+        console.log("Error");
+        res.status(500).json(err);
+    }
+    
+    
 });
 
 router.get('/signup', async (req, res) => {
@@ -12,17 +22,12 @@ router.get('/signup', async (req, res) => {
 });
 
 router.get('/login', async (req, res) => {
-//     console.log(req.session.loggedIn)
-//   if (req.session.loggedIn) {
-//     alert("you are already logged in")
-//     // res.redirect('/');
-//     return;
-//   }
+
   res.render('login');
 });
 
-router.get('/services', async (req, res) => {
-    res.render('services')
-});
+// router.get('/services', async (req, res) => {
+//     res.render('services')
+// });
 
 module.exports = router 
