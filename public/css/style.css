@@ -10,10 +10,15 @@ h1{
 }
 
 header {
-    background-color: var(--bgcdark);
-    height: 15vh;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdg-gTpJQVxeZp1P8WfymtepP_iCQWx1P2rw7K37ZyngvtO7cK5icexEhnosK-vHX9Qlk&usqp=CAU);
+    height: 10rem;
     color: var(--fclight);
     font-size: 2.5rem;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: flex-start;
 }
 
 body {
@@ -25,6 +30,7 @@ body {
 
 .navcontainer {
     background-color: var(--bgcdark);
+    /* background-image: url(https://us.123rf.com/450wm/strizh/strizh2207/strizh220700013/188568348-abstract-gold-waves-shiny-golden-moving-lines-design-element-on-dark-background-for-greeting-card-an.jpg?ver=6); */
     height: 100vh;
     position: absolute;
 }
@@ -35,6 +41,7 @@ body {
 }
 
 a {
+    font-weight: bold;
     text-decoration: none;
     color: var(--fclight);
     font-size: 1.5rem;
