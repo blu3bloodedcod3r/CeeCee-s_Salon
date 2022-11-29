@@ -1,21 +1,21 @@
 const router = require('express').Router();
+const Services = require('../../models');
 
-router.get('/services', async (req, res) => {
+
+router.get('/', async (req, res) => {
     try{
-        const selectService = await Services.getByPk({
-            id: req.params.id,
-            name: req.params.name,
-            price: req.params.price,
-            duration: req.params.duration
-    });
+        const selectServices = await Services.findAll({
+            raw: true,
+            nest: true
+        });
 
-        res.render('/services', {Services})    
+        res.render('services', {selectServices})    
 
-    if (selectService) {
+    if (selectServices) {
         res.render('/bookAppt', {Appt})
     }
     
-    res.status(200).json(selectService);
+    res.status(200).json(selectServices);
 
     } catch (err) {
         console.log(err);
