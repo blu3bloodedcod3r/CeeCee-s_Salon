@@ -14,6 +14,7 @@ header {
     height: 10rem;
     color: var(--fclight);
     font-size: 2.5rem;
+    justify-content: center;
     text-align: center;
 }
 
@@ -30,8 +31,8 @@ body {
 
 
 .navcontainer {
-    background-color: var(--bgcdark);
-    /* background-image: url(https://us.123rf.com/450wm/strizh/strizh2207/strizh220700013/188568348-abstract-gold-waves-shiny-golden-moving-lines-design-element-on-dark-background-for-greeting-card-an.jpg?ver=6); */
+    /* background-color: var(--bgcdark); */
+    background-image: url(https://us.123rf.com/450wm/strizh/strizh2207/strizh220700013/188568348-abstract-gold-waves-shiny-golden-moving-lines-design-element-on-dark-background-for-greeting-card-an.jpg?ver=6);
     height: 100vh;
     position: absolute;
 }
@@ -51,6 +52,9 @@ a {
 
 .card {
     background-color: var(--bgclight);
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 10px var(--fcdark);
 }
 
 .btn {
@@ -84,6 +88,7 @@ a {
     }
     header {
         font-size: 1.5rem;
+        width: 100vw;
     }
 }
 

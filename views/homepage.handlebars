@@ -1,15 +1,15 @@
 <h3> Select your service(s)</h3>
 {{#each services}} 
 <div class="card" style="width: 18rem;">
-    <img src="./assets/istockphoto-915356872-612x612.jpg" class="card-img-top" alt="Service Picture Placeholder">
+    <img src="./assets/{{filename}}" class="card-img-top" alt="Service Picture Placeholder">
     <div class="card-body">
               
-        <h5 class="card-title">{{name}}</h5>
+        <h5 class="card-title"><strong>{{name}}</strong></h5>
         <p class="card-text">
     <ul>
-        <li>Description:{{description}}</li>
-        <li>Duration:{{duration}}</li>
-        <li>Price:{{price}}</li>
+        <li>Description: {{description}}</li>
+        <li>Duration: {{duration}}</li>
+        <li>Price: {{price}}</li>
     </ul>
   
         </p>
