@@ -2,6 +2,23 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// signup user
+router.post('/', async (req, res) => {
+  try {
+    const userData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.userId = userData.dataValues.id;
+      req.session.email = userData.dataValues.email;
+      req.session.loggedIn = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 // login user ('/api/users/login')
 router.post('/login', async (req, res) => {
   try {
@@ -14,7 +31,7 @@ router.post('/login', async (req, res) => {
 
     // exit if no user found
     if (!userData) {
-      return res.status(400).json({ message: 'Incorrect email or password, please try again'});
+      return res.status(400).json({ message: 'Incorrect "email" or password, please try again'});
   
     }
 
@@ -22,7 +39,7 @@ router.post('/login', async (req, res) => {
     const validPassword = userData.checkPassword(req.body.password);
     console.log('validPassword', validPassword)
     if (!validPassword) {
-        return res.status(400).json({ message: 'Incorrect email or password, please try again'});
+        return res.status(400).json({ message: 'Incorrect email or "password", please try again'});
     }
 
     // if above passes then I can create a session and send a response back.
@@ -35,7 +52,7 @@ router.post('/login', async (req, res) => {
         req.session.loggedIn = true;
 
         // send response to client
-        res.status(200).json({ message: 'You are now logged in!' });
+        return res.status(200).json({ message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err)
@@ -44,5 +61,15 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// logout
+// router.post('/logout', (req, res) => {
+//   if (req.session.loggedIn) {
+//     req.session.destroy(() => {
+//       return res.status(204).end();
+//     });
+//   } else {
+//     res.status(404).end();
+//   }
+// });
 
 module.exports = router;

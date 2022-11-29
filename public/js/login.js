@@ -1,8 +1,8 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
-    const email = document.querySelector('#user-email').value.trim();
-    const password = document.querySelector('#user-password').value.trim();
+    const email = document.querySelector('#login-email').value.trim();
+    const password = document.querySelector('#login-password').value.trim();
 
     console.log(email, password);
 
@@ -16,6 +16,11 @@ const loginFormHandler = async (event) => {
         headers: {'Content-Type': 'application/json'},
       });
     console.log(response);
+    if (response.ok) {
+      document.location.replace('/services');
+    } else {
+      alert("Incorrect Email or Password, please try again");
+    }
 
 };
 
