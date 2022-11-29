@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const AppointmentPicker = require('appointment-picker');
 
-router.get('/services/:id/bookAppt/', async (req, res) => {
+router.get('/:id/bookAppt/', async (req, res) => {
     try{
         const selectService = await Services.findAll({
             id: req.params.id,
@@ -38,7 +38,6 @@ const picker = new AppointmentPicker(document.getElementById('time'), {
     templateOuter: '<span class="appo-picker-title">{{title}}</span><ul class="appo-picker-list">{{innerHtml}}</ul>'
 }); 
 
-console.log(picker)
-
+console.log(picker);
 
 module.exports = router

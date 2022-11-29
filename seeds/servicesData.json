@@ -3,36 +3,42 @@
        "name": "Women's Styling",
        "description": "Includes: wash and style",
        "price": "$50 - $100 (depending on hair length)",
-       "duration": "45 min" 
+       "duration": "45 min",
+       "filename": "" 
     },
     {
         "name": "Men's Styling",
         "description": "Includes: wash and style",
         "price": "$20 - $50",
-        "duration": "45 min"  
+        "duration": "45 min",
+        "filename": ""  
      },
      {
         "name": "Women's Haircut",
         "description": "Includes: wash and cut",
         "price": "$35",
-        "duration": "1hr" 
+        "duration": "1hr",
+        "filename": "" 
      },
      {
         "name": "Men's Haircut",
         "description": "Includes: wash and cut",
         "price": "$25",
-        "duration": "45 min." 
+        "duration": "45 min.",
+        "filename": "" 
      },
      {
         "name": "Beard Service",
         "description": "Includes: razor shave and warm towel after trim/cut",
         "price": "$25 - $45",
-        "duration": "45 min" 
+        "duration": "45 min",
+        "filename": "" 
      },
      {
         "name": "Highlights & Tints",
         "description": "Includes: wash and style",
         "price": "$75 - $200",
-        "duration": "2 - 3 hrs depedning on hair length" 
+        "duration": "2 - 3 hrs depedning on hair length",
+        "filename": "" 
      }
 ]
