@@ -26,7 +26,10 @@ Services.init(
         duration: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
+        filename: {
+			type: DataTypes.STRING,
+		},
     },
     {
         sequelize,
