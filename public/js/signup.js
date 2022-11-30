@@ -6,20 +6,22 @@ const signupFormHandler = async (event) => {
 
   console.log(email, password);
 
-  const response = await fetch('/api/users', {
-    method: 'POST',
-    body: JSON.stringify({ 
-      email,
-      password,
-    }),
+  if (email && password) {
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({ 
+        email,
+        password,
+      }),
       headers: {'Content-Type': 'application/json'},
     });
     console.log("response", response);
 
-  if (response.ok) {
-    document.location.replace('/services');
-  } else {
-    alert("Problem with signup, Try again!")
+    if (response.ok) {
+      document.location.replace('/');
+      } else {
+        alert("Problem with signup, Try again!")
+    }
   }
 };
 

@@ -6,16 +6,22 @@ const { User } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
+    console.log('req.body', req.body)
+    console.log(userData)
+    console.log('req.session', req.session)
 
     req.session.save(() => {
       req.session.userId = userData.dataValues.id;
       req.session.email = userData.dataValues.email;
       req.session.loggedIn = true;
-
-      res.status(200).json(userData);
+      
+      console.log('atcreate LoggedIn', req.session.loggedIn)
+      return res.status(200).json(userData);
+      
     });
   } catch (err) {
-    res.status(400).json(err);
+      return res.status(400).json(err);
+  
   }
 });
 
@@ -32,7 +38,6 @@ router.post('/login', async (req, res) => {
     // exit if no user found
     if (!userData) {
       return res.status(400).json({ message: 'Incorrect "email" or password, please try again'});
-  
     }
 
     // if user exists check password by comparing the pd in the user model and password passed from the body
@@ -51,13 +56,24 @@ router.post('/login', async (req, res) => {
         req.session.email = userData.dataValues.email;
         req.session.loggedIn = true;
 
+        console.log('req.session after login', req.session)
         // send response to client
-        return res.status(200).json({ message: 'You are now logged in!' });
+        return res.status(200).json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err)
-    res.status(400).json(err);
-    alert('Incorrect email or password, please try again');
+    return res.status(400).json(err);
+  }
+});
+
+// Logout
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      return res.status(204).end();
+    });
+  } else {
+    return res.status(404).end();
   }
 });
 

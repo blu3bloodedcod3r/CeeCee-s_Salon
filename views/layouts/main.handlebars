@@ -28,13 +28,11 @@
                     <li><a href="/">Home</a></li>
 
                     {{#if loggedIn}}
-                    <li><a href="/services">Services Offered</a></li>
                      <button class="no-button" id="logout">logout</button>
                      {{else}}
                     <li><a href="/login">Login</a></li>
                     <li><a href="/signup">Sign up here</a></li>
                     {{/if}}
-                    {{!-- <li><a href="/services">Services Offered</a></li> --}}
                 </ul>
             </section>
           </div>
@@ -44,13 +42,13 @@
                     {{{body}}}
             </div>
           </aside>
-        </div>
+        </div> 
     </div>
 
   <!-- Render script for logged in users only -->
-  {{!-- {{#if loggedIn}}
+  {{#if loggedIn}}
   <script src="/js/logout.js"></script>
-  {{/if}} --}}
+  {{/if}}
 
  <style>
             @import url('https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Henny+Penny&family=Mystery+Quest&display=swap');

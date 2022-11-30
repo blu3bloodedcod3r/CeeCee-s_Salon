@@ -6,7 +6,7 @@ const loginFormHandler = async (event) => {
 
     console.log(email, password);
 
-
+  if (email && password) {
     const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({ 
@@ -17,11 +17,11 @@ const loginFormHandler = async (event) => {
       });
     console.log(response);
     if (response.ok) {
-      document.location.replace('/services');
+      document.location.replace('/');
     } else {
       alert("Incorrect Email or Password, please try again");
     }
-
+  }
 };
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
