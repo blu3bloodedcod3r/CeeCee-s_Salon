@@ -63,9 +63,22 @@ a {
 }
 
 .content {
-  margin-left: 150px;
-}
-
+    margin-left: 350px;
+  }
+  
+  h3 {
+      color: var(--fclight);
+      font-weight: bold;
+  }
+  
+  ::placeholder {
+      color: var(--fclight) !important;
+  }
+  
+  .apt-box {
+      background-color: var(--bgclight) !important;
+  }
+  
 @media screen and (max-width: 1024px) {
     h1{
         font-size: 3rem;
