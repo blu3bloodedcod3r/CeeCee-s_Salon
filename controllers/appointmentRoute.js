@@ -1,30 +1,11 @@
 const router = require('express').Router();
-const Services = require('../../models/Services')
+const Services = require('../models/Services')
 const AppointmentPicker = require('appointment-picker');
-const pickerCSS = require('../../node_modules/appointment-picker')
+const pickerCSS = require('../node_modules/appointment-picker')
 
 router.get('/', async (req, res) => {
-    try{
-        const selectService = await Services.findAll({
-            id: req.params.id,
-            name: req.params.name,
-            price: req.params.price,
-            duration: req.params.duration
-    });
-        res.render('/', {Services})    
-
-    if (selectService) {
-
-        res.render('/bookAppt', {Appt})
-    }
-    console.log(selectService);
-    res.status(200).json(selectService);
-
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
+    return res.render('bookappointment')
+})
 
   var picker = function () {
     $('#time-1').appointmentPicker({
