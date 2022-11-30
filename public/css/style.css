@@ -33,7 +33,7 @@ body {
 .navcontainer {
     /* background-color: var(--bgcdark); */
     background-image: url(https://us.123rf.com/450wm/strizh/strizh2207/strizh220700013/188568348-abstract-gold-waves-shiny-golden-moving-lines-design-element-on-dark-background-for-greeting-card-an.jpg?ver=6);
-    height: 100vh;
+    height: 155vh;
     position: absolute;
 }
 
@@ -78,6 +78,16 @@ a {
   .apt-box {
       background-color: var(--bgclight) !important;
   }
+
+  .card {
+    width: 18rem;
+  }
+
+  @media screen and (max-width: 1440px) {
+    header {
+        width: 101vw;
+    }
+  }
   
 @media screen and (max-width: 1024px) {
     h1{
@@ -85,13 +95,23 @@ a {
     }
     header {
         font-size: 1.5rem;
+        width: 112vw;
     }
     .navcontainer{
         max-width: fit-content;
+        height: 170vh;
     }
     a {
         font-size: 1rem;
     }
+
+    .content {
+        margin-left: 200px;
+      }
+
+      .card {
+        width: 15rem;
+      }
 }
 
 
@@ -101,7 +121,31 @@ a {
     }
     header {
         font-size: 1.5rem;
-        width: 100vw;
+        width: 105vw;
+    }
+    
+    .content {
+        margin-left: 150px;
+      }
+
+    .card {
+        width: 11rem;
+      }
+
+      h5 {
+        font-size: .8rem;
+    }
+
+    .btn {
+        font-size: .6rem;
+    }
+
+    body {
+        font-size: .7rem;
+    }
+
+    .navcontainer{
+        height: 120vh;
     }
 }
 
@@ -112,18 +156,43 @@ a {
     header {
         font-size: 1rem;
         height: 10vh;
+        width: 127vw;
     }
     a {
         font-size: .7rem;
     }
-}
 
+    h5 {
+        font-size: .8rem;
+    }
+
+    .btn {
+        font-size: .55rem;
+    }
+
+    body {
+        font-size: .5rem;
+    }
+
+    .content {
+        margin-left: 100px;
+    }
+  
+    .card {
+        width: 12rem;
+      }
+      
+}
 @media screen and (max-width: 375px) {
     h1{
         font-size: 2rem;
     }
     header {
         font-size: 1rem;
+        width: 130vw;
+    }
+    .navcontainer{
+        height: 200vh;
     }
 }
 
@@ -133,5 +202,6 @@ a {
     }
     header {
         font-size: .8rem;
+        width: 135vw;
     }
 }
