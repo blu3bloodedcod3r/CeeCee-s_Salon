@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Services = require('../models/Services')
-const AppointmentPicker = require('appointment-picker');
+const AppointmentPicker = require('appointment-picker')
 const pickerCSS = require('../node_modules/appointment-picker')
 
 router.get('/', async (req, res) => {
