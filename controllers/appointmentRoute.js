@@ -4,7 +4,7 @@ const AppointmentPicker = require('appointment-picker')
 const pickerCSS = require('../node_modules/appointment-picker')
 
 router.get('/', async (req, res) => {
-    return res.render('bookappointment')
+    return res.render('bookappointment', { loggedIn: req.session.loggedIn })
 })
 
 var picker = function () {
