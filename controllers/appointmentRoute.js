@@ -24,17 +24,17 @@ var picker = function () {
 };
 
 AppointmentPicker.onload = function() {
-    $.fn.appointmentPicker = function(options) {
-        this.appointmentPicker = new AppointmentPicker(this[0], options);
-        return this;
-      }
-};
+        $.fn.appointmentPicker = function(options) {
+            this.appointmentPicker = new AppointmentPicker(this[0], options);
+            return this;
+        }
+    };
 
 const getTime = function() {
-    $picker.appointmentPicker.getTime();
-};
+        $picker.appointmentPicker.getTime();
+    };
 
-console.log(picker);
-console.log(getTime)
+    console.log(picker);
+    console.log(getTime)
 
 module.exports = router
