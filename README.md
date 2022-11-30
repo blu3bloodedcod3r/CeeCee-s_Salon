@@ -26,11 +26,11 @@ User must be logged in in order to complete an appointment or they will be redir
 
 ## Credits
 
-List your collaborators:
+List of project collaborators:
 
--Nilofar Sabbaghian:  Me-ross Niloufar
--Caryn James:  carynbojames
--Jared lasiter: spmfd
+-Nilofar Sabbaghian:  Me-ross Niloufar,
+-Caryn James:  carynbojames,
+-Jared lasiter: spmfd,
 -Crystal Aguilar:  blu3bloodedcod3r
 
 
