@@ -23,6 +23,18 @@ header {
     justify-content: flex-start;
 }
 
+.no-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--fclight);
+    font-size: 1.5rem;
+    text-align: start;
+  }
+
 body {
     background-color: var(--bgclight);
     /* font-family: 'Bigelow Rules', cursive; */
@@ -35,6 +47,7 @@ body {
     background-image: url(https://us.123rf.com/450wm/strizh/strizh2207/strizh220700013/188568348-abstract-gold-waves-shiny-golden-moving-lines-design-element-on-dark-background-for-greeting-card-an.jpg?ver=6);
     height: 155vh;
     position: absolute;
+    width: 10vw;
 }
 
 .links li {
@@ -98,13 +111,15 @@ a {
         width: 112vw;
     }
     .navcontainer{
-        max-width: fit-content;
         height: 170vh;
     }
     a {
         font-size: 1rem;
     }
 
+    .no-button {
+        font-size: 1rem;
+    }
     .content {
         margin-left: 200px;
       }
@@ -122,6 +137,10 @@ a {
     header {
         font-size: 1.5rem;
         width: 105vw;
+    }
+
+    .navcontainer{
+        width: 15vw;
     }
     
     .content {
@@ -158,7 +177,16 @@ a {
         height: 10vh;
         width: 127vw;
     }
+
+    .navcontainer{
+        width: 20vw;
+    }
+
     a {
+        font-size: .7rem;
+    }
+
+    .no-button {
         font-size: .7rem;
     }
 
