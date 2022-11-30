@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     return res.render('bookappointment')
 })
 
-  var picker = function () {
+var picker = function () {
     $('#time-1').appointmentPicker({
     interval: 60,
     mode: '12h',
@@ -20,21 +20,21 @@ router.get('/', async (req, res) => {
     title: Services.selectService,
     templateInner: '<li class="appo-picker-list-item {{enabled}}"><input type="button" tabindex="-1" value="{{time}}" {{enabled}}></li>',
     templateOuter: '<span class="appo-picker-title">{{title}}</span><ul class="appo-picker-list">{{innerHtml}}</ul>',
+    }); 
+};
 
-}); 
-}
 AppointmentPicker.onload = function() {
     $.fn.appointmentPicker = function(options) {
         this.appointmentPicker = new AppointmentPicker(this[0], options);
         return this;
       }
-      console.log($)
-}
+};
 
 const getTime = function() {
     $picker.appointmentPicker.getTime();
-}
+};
 
 console.log(picker);
+console.log(getTime)
 
 module.exports = router
