@@ -5,6 +5,14 @@
     --fclight: #AD974F;
 }
 
+body {
+    background-color: var(--bgclight);
+    /* font-family: 'Bigelow Rules', cursive; */
+    font-family: 'Mystery Quest', cursive;
+}
+
+/* Header and sidenavbar section */
+
 h1{
     font-size: 4.5rem;
 }
@@ -18,10 +26,22 @@ header {
     text-align: center;
 }
 
+.navcontainer {
+    /* background-color: var(--bgcdark); */
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdg-gTpJQVxeZp1P8WfymtepP_iCQWx1P2rw7K37ZyngvtO7cK5icexEhnosK-vHX9Qlk&usqp=CAU);
+    height: 300vh;
+    position: absolute;
+    width: 10vw;
+}
+
+/* regular flex container for cards */
+
 .flex-container{
     display: flex;
     justify-content: flex-start;
 }
+
+/* This code gets rid of "log out" button styling */
 
 .no-button {
     background: none;
@@ -35,20 +55,8 @@ header {
     text-align: start;
   }
 
-body {
-    background-color: var(--bgclight);
-    /* font-family: 'Bigelow Rules', cursive; */
-    font-family: 'Mystery Quest', cursive;
-}
 
-
-.navcontainer {
-    /* background-color: var(--bgcdark); */
-    background-image: url(https://us.123rf.com/450wm/strizh/strizh2207/strizh220700013/188568348-abstract-gold-waves-shiny-golden-moving-lines-design-element-on-dark-background-for-greeting-card-an.jpg?ver=6);
-    height: 155vh;
-    position: absolute;
-    width: 10vw;
-}
+/* section for links in navbar */
 
 .links li {
     margin-top: 20px;
@@ -63,26 +71,48 @@ a {
     text-align: start;
 }
 
+/* card styling */
+
 .card {
     background-color: var(--bgclight);
     margin: 10px;
     border-radius: 10px;
     box-shadow: 10px 10px var(--fcdark);
+    width: 18rem;
 }
+
+
+/* styling for buttons */
 
 .btn {
     background-color: var(--bgcdark);
     color: var(--fclight)
 }
 
+/* increases size of button on admin page */
+
+.mod-btn {
+    font-size: 24px;
+}
+
+.custom-btn {
+    font-size: 24px;
+}
+
+/* pushes content in body container to the right for viewing */
+
 .content {
     margin-left: 350px;
   }
   
+/* styling for all general headers */
+
   h3 {
       color: var(--fclight);
       font-weight: bold;
   }
+
+  /* styling for appointment modal */
   
   ::placeholder {
       color: var(--fclight) !important;
@@ -92,10 +122,6 @@ a {
       background-color: var(--bgclight) !important;
   }
 
-  .card {
-    width: 18rem;
-  }
-
   @media screen and (max-width: 1440px) {
     header {
         width: 101vw;
@@ -103,16 +129,18 @@ a {
   }
   
 @media screen and (max-width: 1024px) {
-    h1{
+    h1 {
         font-size: 3rem;
     }
     header {
         font-size: 1.5rem;
         width: 112vw;
     }
+
     .navcontainer{
-        height: 170vh;
+        height: 300vh;
     }
+
     a {
         font-size: 1rem;
     }
@@ -120,6 +148,7 @@ a {
     .no-button {
         font-size: 1rem;
     }
+    
     .content {
         margin-left: 200px;
       }
@@ -131,7 +160,7 @@ a {
 
 
 @media screen and (max-width: 768px) {
-    h1{
+    h1 {
         font-size: 2.7rem;
     }
     header {
@@ -139,8 +168,9 @@ a {
         width: 105vw;
     }
 
-    .navcontainer{
+    .navcontainer {
         width: 15vw;
+        height: 250vh;
     }
     
     .content {
@@ -159,27 +189,33 @@ a {
         font-size: .6rem;
     }
 
+    .mod-btn {
+        font-size: 24px;
+    }
+
+    .custom-btn {
+        font-size: 24px;
+    }
+
     body {
         font-size: .7rem;
     }
-
-    .navcontainer{
-        height: 120vh;
-    }
 }
 
-@media screen and (max-width: 425px) {
-    h1{
-        font-size: 2rem;
-    }
-    header {
-        font-size: 1rem;
-        height: 10vh;
-        width: 127vw;
+@media screen and (max-width: 430px) {
+
+    h1 {
+        font-size: 1.8rem;
     }
 
-    .navcontainer{
-        width: 20vw;
+    header {
+        font-size: .8rem;
+        height: 10vh;
+        width: 130vw;
+    }
+
+    .navcontainer {
+        width: 23vw;
     }
 
     a {
@@ -198,6 +234,14 @@ a {
         font-size: .55rem;
     }
 
+    .mod-btn {
+        font-size: 20px;
+    }
+
+    .custom-btn {
+        font-size: 20px;
+    }
+
     body {
         font-size: .5rem;
     }
@@ -211,23 +255,26 @@ a {
       }
       
 }
-@media screen and (max-width: 375px) {
-    h1{
-        font-size: 2rem;
+
+@media screen and (max-width: 380px) {
+    h1 {
+        font-size: 1.8rem;
     }
+
     header {
         font-size: 1rem;
         width: 130vw;
     }
     .navcontainer{
-        height: 200vh;
+        height: 380vh;
     }
 }
 
 @media screen and (max-width: 320px) {
-    h1{
+    h1 {
         font-size: 1.3rem;
     }
+
     header {
         font-size: .8rem;
         width: 135vw;
