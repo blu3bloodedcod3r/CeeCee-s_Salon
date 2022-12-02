@@ -22,7 +22,7 @@ Be sure to 'npm i' so that all dependencies can be used properly with the websit
 
 User must be logged in in order to complete an appointment or they will be redirected to login page or user must sign up if they do not already have login information created.
 
-![Screenshot of initial webpage](./assets/readmeshot.png)
+![Screenshot of initial webpage](./assets/homepage.png)
 
 ## Credits
 
