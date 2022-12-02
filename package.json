@@ -24,18 +24,18 @@
     "jquery": "^3.6.1",
     "nodemon": "^2.0.20"
   },
-  "name": "tech_blog",
+  "name": "ceecees_salon",
   "version": "1.0.0",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blu3bloodedcod3r/Tech_blog.git"
+    "url": "git+https://github.com/blu3bloodedcod3r/CeeCee-s_Salon.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://stormy-oasis-67076.herokuapp.com/"
   },
   "homepage": "",
   "description": ""
