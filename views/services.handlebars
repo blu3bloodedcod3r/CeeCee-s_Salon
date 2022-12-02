@@ -2,31 +2,31 @@
   <div class="col-12">
     <h3>Add a New Service:</h3>
 
-    <form class="form new-service-form">
-      <div class="form-group">
-        <label for="service-name">Name:</label>
-        <input class="form-input" type="text" id="service-name" name="service-name" />
+<form class="form new-service-form">
+    <div class="mb-3 form-group">
+      <label for="service-name" class="form-label">Name:</label>
+      <input type="text" class="form-input form-control" id="service-name" name="service-name">
+    </div>
+    <div class="mb-3 form-group">
+        <label for="exampleInputPassword1" class="form-label">Description:</label>
+        <input type="text" class="form-input form-control" id="description" name="description">
       </div>
-      <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea class="form-input" id="description" name="description"></textarea>
+      <div class="mb-3 form-group">
+        <label for="exampleInputPassword1" class="form-label">Price:</label>
+        <input type="text" class="form-input form-control" id="price" name="price">
       </div>
-      <div class="form-group">
-        <label for="price">Price:</label>
-        <input class="form-input" type="text" id="price" name="price"/>
+      <div class="mb-3 form-group">
+        <label for="exampleInputPassword1" class="form-label">Duration:</label>
+        <input type="text" class="form-input form-control" id="duration" name="duration">
       </div>
-      <div class="form-group">
-        <label for="duration">Duration:</label>
-        <input class="form-input" type="text" id="duration" name="duration"/>
-      </div>
-      <div class="form-group">
-        <label for="filename">Filename:</label>
-        <input class="form-input" type="text" id="filename" name="filename"/>
+      <div class="mb-3 form-group">
+        <label for="exampleInputPassword1" class="form-label">Filename:</label>
+        <input type="text" class="form-input form-control" id="filename" name="filename">
       </div>
       <div class="form-group">
         <button type="submit" class="btn custom-btn mt-2" id="addservice">Add</button>
       </div>
-    </form>
+  </form>
   </div>
 
 {{#each services}} 
