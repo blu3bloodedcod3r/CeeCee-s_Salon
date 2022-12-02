@@ -12,7 +12,6 @@ router.get('/', async (req, res) => {
         console.log("Error");
         res.status(500).json(err);
     }
-
 });
 
 router.get('/signup', async (req, res) => {
