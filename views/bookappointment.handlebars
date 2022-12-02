@@ -1,37 +1,35 @@
-Hello
 
-{{!-- {{#if loggedIn}} --}}
- {{!-- {{#each services}} --}}
+{{#if loggedIn}}
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6 offset-md-3 border p-4 shadow bg-light apt-box">
             <div class="col-12">
-                <h3 class="fw-normal text-secondary fs-4 text-uppercase mb-4">Appointment form</h3>
+                <h3 class="fw-normal text-secondary fs-4 text-uppercase mb-4">Appointment Form</h3>
             </div>
-            <form action="">
+            <form id="apptForm" action="">
                 <div class="row g-3">
-                    <div class="col-md-6">
-                        <input type="email" class="form-control" placeholder="Enter Email">
+                    <div class="col-md-12">
+                        <input type="email" id="email" class="form-control" placeholder="Enter Email">
                     </div>
                     <div class="col-md-6">
-                        <input type="date" class="form-control" placeholder="Enter Date">
+                        <input type="date" id="date" class="form-control" placeholder="Enter Date">
                     </div>
                     <div class="col-md-6">
-                        <input id="time-1" type="text" aria-live="assertive" aria-label="Use up or down arrow keys to change time">
+                        <input type="text" id="time-1" class="form-control" aria-live="assertive" aria-label="Use up or down arrow keys to change time">
                     </div>
-                   
                     <div class="col-12">
-                        <select class="form-select">
+                        <select class="form-select" placeholder="Select Service">
                             <option selected>Select Service</option>
-                            <option value="1">{{name}}</option>
-                           
+                            {{#each services}}
+                            <option value="1" id="description">{{name}}</option>
+                            {{/each}}
                         </select>
                     </div>
-                   
                     <div class="col-12">
-                        <textarea class="form-control" placeholder="Message"></textarea>
+                        <textarea class="form-control" id='message' placeholder="Message"></textarea>
                     </div>
-                    <div class="col-12 mt-5">                        
+                    <div class="col-12 mt-3">                        
                         <button type="submit" class="btn btn-primary float-end">Book Appointment</button>
                         <button type="button" class="btn btn-outline-secondary float-end me-2">Cancel</button>
                     </div>
@@ -40,8 +38,7 @@ Hello
         </div>
     </div>
 </div>
- {{!-- {{/each}} --}}
 
- {{!-- {{else}}
+{{else}}
 <script src="js/login.js"></script>
- {{/if}} --}}
+{{/if}}

@@ -17,5 +17,18 @@ Services.belongsToMany(User, {
   }
 });
 
+Services.belongsToMany(Appt, {
+  through: {
+    model: Appt, 
+    unique: false
+  }
+})
+
+// Appt.belongsToMany(Services, {
+//   through: {
+//     model: Services,
+//     unique: false
+//   }
+// })
 
 module.exports =  { User, Services, Appt };

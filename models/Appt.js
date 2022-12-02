@@ -19,6 +19,13 @@ Appt.init(
         type: DataTypes.DATE,
         allowNull: false,
     },
+    description: {
+      type: DataTypes.STRING,
+      reference: {
+        modle: 'services',
+        key: 'description'
+      }
+    },
     user_id: {
       type: DataTypes.INTEGER,
       reference: {
