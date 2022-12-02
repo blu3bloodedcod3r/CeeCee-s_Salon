@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { User, Appt, Services} = require('../models');
 
 router.get('/', async (req, res) => {
-
     try {
         const servicesData = await Services.findAll()
         const services = servicesData.map((data) => data.get({plain: true}))
@@ -13,8 +12,6 @@ router.get('/', async (req, res) => {
         console.log("Error");
         res.status(500).json(err);
     }
-    
-    
 });
 
 router.get('/signup', async (req, res) => {
