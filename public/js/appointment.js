@@ -23,43 +23,74 @@ const apptForm = document.getElementById("apptForm");
 // Create HTML
 
 
-const postAppt = (appt) =>
-  fetch("/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(appt),
-  })
-    .then((res) => res.json())
-    .then((data) => {return data})
-    .catch(() => console.error("Error in POST request"));
 
-
-// Create the event listener. 
-apptForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  // Get the value and save it as a variable
-  // When outside fo the event listener, the variables hold no value
-  // Code was already run and didn't get value 
-  // Without value it returns the html line
+async function newAppointment(event) {
+  event.preventDefault();
   const email = document.getElementById("email").value.trim();
-  const date = document.getElementById("date").value.trim();
-  const time = document.getElementById("time-1").value.trim();
+  const date = document.getElementById("date").value;
+  const time = document.getElementById("time-1").value;
   const service = document.getElementById("description").value.trim();
   const msg = document.getElementById('message').value.trim()
 
-  // Create an object
-  const newAppt = {
-    email: email,
-    date: date,
-    time: time,
-    service: service,
-    message: msg
-  };
-  console.log(newAppt)
+  const response = await fetch('/api/appointment', {
+    method: 'POST',
+    body: JSON.stringify({
+      email, 
+      date,
+      time
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  if (response.ok) {
+    document.location.replace('/book')
+  } else {
+    alert('Failed to add appointment')
+  }
+}
 
-  // Make a POST request to the server
-  postAppt(newAppt)
-    .catch((err) => console.error(err));
-});
+apptForm.addEventListener("submit", newAppointment)
+
+
+
+// const postAppt = (appt) =>
+//   fetch('/book', {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(appt),
+//   })
+//     .then((res) => res.json())
+//     .then((data) => {return data})
+//     .catch(() => console.error("Error in POST request"));
+
+
+// // Create the event listener. 
+// apptForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   // Get the value and save it as a variable
+//   // When outside fo the event listener, the variables hold no value
+//   // Code was already run and didn't get value 
+//   // Without value it returns the html line
+//   const email = document.getElementById("email").value.trim();
+//   const date = document.getElementById("date").value.trim();
+//   const time = document.getElementById("time-1").value.trim();
+//   const service = document.getElementById("description").value.trim();
+//   const msg = document.getElementById('message').value.trim()
+
+//   // Create an object
+//   const newAppt = {
+//     email: email,
+//     date: date,
+//     time: time,
+//     // service: service,
+//     // message: msg
+//   };
+//   console.log(newAppt)
+
+//   // Make a POST request to the server
+//   postAppt(newAppt)
+//     .catch((err) => console.error(err));
+// });

@@ -18,17 +18,5 @@ router.get('/appointment', async (req, res) => {
     return res.render('appointment')
 })
 
-// When passing from browser to back end will result in 
-router.post('/', async (req, res) => {
-    try {
-        const apptData = await Appt.create({
-        date: req.body.email,
-        time: req.body.time,
-        description: req.body.service
-    })
-    } catch (err) {
-        res.status(400).json(err)
-    }
-})
 
 module.exports = router
