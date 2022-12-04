@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
     try {
         const serviceData = await Services.findAll()
         const services = serviceData.map((data) => data.get({plain: true}))
+        console.log('services', services)
         res.render('bookappointment', { services, loggedIn: req.session.loggedIn })
     } catch (err) {
         res.status(500).json(err)
