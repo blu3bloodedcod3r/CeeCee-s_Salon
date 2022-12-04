@@ -26,18 +26,23 @@ const apptForm = document.getElementById("apptForm");
 
 async function newAppointment(event) {
   event.preventDefault();
+  console.log('inside newAppointment')
   const email = document.getElementById("email").value.trim();
   const date = document.getElementById("date").value;
   const time = document.getElementById("time-1").value;
   const service = document.getElementById("description").value.trim();
   const msg = document.getElementById('message').value.trim()
 
+  console.log(email, date, time, service, msg)
+
   const response = await fetch('/api/appointment', {
     method: 'POST',
     body: JSON.stringify({
       email, 
       date,
-      time
+      time,
+      service, 
+      msg
     }),
     headers: {
       'Content-Type': 'application/json'
