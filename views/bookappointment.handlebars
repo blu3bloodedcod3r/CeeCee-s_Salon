@@ -18,10 +18,10 @@
                         <input type="text" id="time-1" class="form-control" aria-live="assertive" aria-label="Use up or down arrow keys to change time">
                     </div>
                     <div class="col-12">
-                        <select class="form-select" placeholder="Select Service">
+                        <select class="form-select" id="description" aria-label="Default select example">
                             <option selected>Select Service</option>
                             {{#each services}}
-                            <option id="description">{{name}}</option>
+                            <option value={{id}}>{{name}}</option>
                             {{/each}}
                         </select>
                     </div>
@@ -39,7 +39,7 @@
 </div>
 
 
-
+<option id='description'>{{name}}</option>
 {{else}}
 <a href="http://localhost:3000/login">Click here to login to view this page</a>
 {{/if}}

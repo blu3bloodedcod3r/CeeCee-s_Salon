@@ -6,6 +6,7 @@ const Appt = require('./Appt')
 User.belongsToMany(Services, {
   through: {
     model: Appt,
+    foreignKey: 'user_id', 
     unique: false
   }
 });
@@ -13,22 +14,9 @@ User.belongsToMany(Services, {
 Services.belongsToMany(User, {
   through: {
     model: Appt,
+    foreignKey: 'service_id',
     unique: false
   }
 });
-
-Services.belongsToMany(Appt, {
-  through: {
-    model: Appt, 
-    unique: false
-  }
-})
-
-// Appt.belongsToMany(Services, {
-//   through: {
-//     model: Services,
-//     unique: false
-//   }
-// })
 
 module.exports =  { User, Services, Appt };

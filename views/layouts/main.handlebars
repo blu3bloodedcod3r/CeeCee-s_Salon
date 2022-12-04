@@ -22,11 +22,13 @@
           <div class="col-12 col-4">
             <section class="navsidebar navcontainer">
                 <ul class="links">
-                    <li><a href="/">Home</a></li>
-
+                    <li><a href="/">Home</a></li> 
                     {{#if loggedIn}}
-                     <button class="no-button" id="logout">Logout</button>
-                     {{else}}
+                    <li><a href="/book">Book</a></li>
+                    <li><a href="/admin">Appts</a></li>
+                    <br>
+                    <button class="no-button" id="logout">Logout</button>
+                    {{else}}
                     <li><a href="/login">Login</a></li>
                     <li><a href="/signup">Sign up here</a></li>
                     {{/if}}
@@ -50,7 +52,6 @@
 <style>@import url('https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Henny+Penny&family=Mystery+Quest&display=swap');
 </style> 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script type="module" src="/js/appointment.js"></script> 
 {{!-- Handlebar file starts where the public folder starts --}}
 
 </body>
