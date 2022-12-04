@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { Appt } = require('../../models')
 
-// When passing from browser to back end will result in 
 router.post('/', async (req, res) => {
     console.log(req.body)
     console.log(req.session)
@@ -10,9 +9,10 @@ router.post('/', async (req, res) => {
         date: new Date(req.body.date),
         time: new Date(`${req.body.date} ${req.body.time}`),
         message: req.body.msg,
-        service_id: parseInt(req.body.service),
+        service_id: parseInt(req.body.service), // column requires a INT. The data is received as a string. Convert to INT using parseInt
         user_id: req.session.userId
     })
+    console.log(apptData)
     res.status(200).json(apptData)
     } catch (err) {
         console.log(err)

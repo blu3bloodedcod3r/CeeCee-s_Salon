@@ -1,6 +1,5 @@
 // Reference: 11-Express > 17-Ins_POST-Fetch, 21_Ins_Modular-Routing
 
-
 var picker = new AppointmentPicker(document.getElementById('time-1'), {
   interval: 60,
   mode: '12h',
@@ -20,9 +19,6 @@ document.getElementById('time-1').addEventListener('click', function() {
 
 const apptForm = document.getElementById("apptForm");
 
-// Create HTML
-
-
 
 async function newAppointment(event) {
   event.preventDefault();
@@ -30,7 +26,7 @@ async function newAppointment(event) {
   const email = document.getElementById("email").value.trim();
   const date = document.getElementById("date").value;
   const time = document.getElementById("time-1").value;
-  const service = document.getElementById("description").value.trim();
+  let service = document.getElementById("description").value.trim();
   const msg = document.getElementById('message').value.trim()
 
   console.log(email, date, time, service, msg)
@@ -49,7 +45,7 @@ async function newAppointment(event) {
     }
   })
   if (response.ok) {
-    document.location.replace('/book')
+    document.location.replace('/admin')
   } else {
     alert('Failed to add appointment')
   }
