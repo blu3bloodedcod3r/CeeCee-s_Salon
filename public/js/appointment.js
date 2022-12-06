@@ -26,11 +26,15 @@ async function newAppointment(event) {
   const email = document.getElementById("email").value.trim();
   const date = document.getElementById("date").value;
   const time = document.getElementById("time-1").value;
-  let service = document.getElementById("description").value.trim();
+  const service = document.getElementById("description").value.trim();
   const msg = document.getElementById('message').value.trim()
 
   console.log(email, date, time, service, msg)
+  console.log(JSON.stringify({email, date}))
+  // carynjames16@gmail.com 2022-11-27 11:00 am, etc.
+  // {"email":"carynjames16@gmail.com","date":"2022-11-27", etc.}
 
+  // Packaged into an object from the front end to the backend
   const response = await fetch('/api/appointment', {
     method: 'POST',
     body: JSON.stringify({
@@ -44,8 +48,9 @@ async function newAppointment(event) {
       'Content-Type': 'application/json'
     }
   })
+  
   if (response.ok) {
-    document.location.replace('/admin')
+    document.location.replace('/admin') 
   } else {
     alert('Failed to add appointment')
   }
