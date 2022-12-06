@@ -19,5 +19,22 @@ router.get('/appointment', async (req, res) => {
     return res.render('appointment')
 })
 
+router.get('/confirmation', async (req, res) => {
+    try {
+        // console.log(req.session.userId)
+        // const apptData = await Services.findAll({
+        //     order: ['timestamps'], 
+        //     where: {
+        //         user_id: req.session.userId
+        //     }, 
+        // })
+        // const appt = apptData.get({ plain: true })
+        // console.log(appt)
+        // res.render('confirmation', { appt, loggedIn: req.session.login })
+        res.render('confirmation', { loggedIn: req.session.login })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
 
 module.exports = router

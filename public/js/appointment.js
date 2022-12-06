@@ -50,7 +50,7 @@ async function newAppointment(event) {
   })
   
   if (response.ok) {
-    document.location.replace('/admin') 
+    document.location.replace('/book/confirmation') 
   } else {
     alert('Failed to add appointment')
   }
