@@ -26,9 +26,9 @@ User must be logged in in order to complete an appointment or they will be redir
 ![Screenshot of initial webpage](./assets/homepage.png)
 
 ## Deployment
-You can see the application deployed [here] (https://arcane-mesa-34792.herokuapp.com)
+You can see the application deployed [here](https://arcane-mesa-34792.herokuapp.com)
 
-ReRepository for CeeCee's Salon can be found at: [GitHub] (https://github.com/blu3bloodedcod3r/CeeCee-s_Salon)
+ReRepository for CeeCee's Salon can be found at: [GitHub](https://github.com/blu3bloodedcod3r/CeeCee-s_Salon)
 
 ## Credits
 
